@@ -29,7 +29,7 @@
                         <td>{{ item.comment }}</td>
                         <td class="state">
                             <button v-on:click="doChangeState(item)">
-                                {{ item.state }}
+                                {{ labels[item.state] }}
                             </button>
                         </td>
                         <td class="button">

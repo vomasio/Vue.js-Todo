@@ -37,6 +37,15 @@ const app = new Vue({
                 state: 0
             })
             comment.value = ''
+        },
+        //Change State
+        doChangeState: function(item) {
+            item.state = item.state ? 0 : 1
+        },
+        //Delete
+        doRemove: function(item) {
+            var index = this.todos.indexOf(item)
+            this.todos.splice(index, 1)
         }
     },
     // "watch" for auto save
@@ -47,7 +56,7 @@ const app = new Vue({
             },
             deep: true
         }
-    }
+    },
     created() {
         this.todos = todoStorage.fetch()
     }
